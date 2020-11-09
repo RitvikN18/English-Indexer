@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/table.css') }}">
+
+	<title></title>
+</head>
+<body><br><br>
+	<h1> <span class="yellow">INDEXER FOR </span><span class="blue"></span>ENGLISH<span class="blue"></span></h1><br><hr>
+<table class="container">
+		<thead>
+			<tr>
+				<th><h1>WORDS</h1></th>
+				<th><h1>DOC FREQUENCY</h1></th>
+				<th><h1>DOC NUMBER</h1></th>
+				<th><h1>COLLECTION FREQUENCY</h1></th>
+
+				
+			</tr>
+		</thead><br>
+		<tbody>
+			    {% for a in arr %}
+			    	<tr><td><b>{{a}}</b></td>
+			    	{% for y in savage %}
+			    		{% if a==y %}
+			    			{% for z in savage[y] %}
+			    				<td>{{savage[y][z]}}</td>
+			    			{% endfor %}
+			    		{% else %}
+			    			{{pass}}
+			    		{% endif %}
+			    	{% endfor %}</tr>
+			    {% endfor %}
+			
+			    	
+					
+			
+		
+		
+		</tbody>
+	</table><br><br>
+
+</body>
+</html>
+
